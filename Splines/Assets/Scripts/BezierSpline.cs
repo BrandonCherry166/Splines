@@ -6,7 +6,7 @@ public class BezierSpline : MonoBehaviour
 
     public int SegmentCount()
     {
-        return knots.Count;
+        return knots.Count - 1;
     }
 
     public Vector3 Evaluate(float T)
