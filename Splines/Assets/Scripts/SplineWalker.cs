@@ -14,7 +14,12 @@ public class SplineWalker : MonoBehaviour
         }
 
         t += speed * Time.deltaTime;
-        t %= 1f; //Loop
+
+        //Handle Looping
+        if (t > 1f)
+        {
+            t -= 1f;
+        }
 
         Vector3 position = spline.Evaluate(t);
         Vector3 tangent = spline.EvaluateTangent(t);
